@@ -19,9 +19,12 @@ $(document)
         retryHeight = 1297;
         retryWidth = 679;
         playWidth = 1155;
-        playHeight = 1381; /*-----------------------------Loading Bitmaps-----------------------------*/
+        playHeight = 1381; 
+     
+        /*-----------------------------Loading Bitmaps-----------------------------*/
         gameState = 0; // >0 loading ==-1 play  ==-2 pause
-        gameState++;
+        
+        gameState++; 
         starEmptyImage = new Image();
         starEmptyImage.addEventListener("load", function () {
           
@@ -29,6 +32,10 @@ $(document)
               $('progress').attr('value',$('progress').attr('max')-gameState);
         });
         starEmptyImage.src = "images/starempty.png";
+        
+        
+       
+        
         
         
         gameState++;
@@ -39,6 +46,9 @@ $(document)
               $('progress').attr('value',$('progress').attr('max')-gameState);
         });
         tempback.src = "images/backback.png";
+        
+        
+        
         
         
         gameState++;
@@ -117,6 +127,11 @@ $(document)
                 this.canvas.fillStyle = "#c8de3b";
                 this.canvas.strokeText("Level: " + level, 20, 30);
                 this.canvas.fillText("Level: " + level, 20, 30);
+                if(level===1){
+                this.canvas.fillStyle = "white";
+                
+                    this.canvas.font = "15px Hammersmith One";
+                this.canvas.fillText("Tip: Draw a line from left to right to hit the stars!",($('#game-container').width())-380,($('#game-container').height())-10);}
             }
             this.nextLevel = function (resultScore) {
                 this.canvas.clearRect(0, 0, this.canvasElement.width(), this.canvasElement.height());
@@ -133,6 +148,7 @@ $(document)
                 this.canvas.clearRect(0, 0, this.canvasElement.width(), this.canvasElement.height());
                 this.canvas.drawImage(playImage, 0, 0, playWidth, playHeight, ($('#game-container')
                     .width()) / 2 - ((playWidth / 3) / 2), 52, playWidth / 3, playHeight / 3);
+
             }
         } /*-----------------------------Background Class-----------------------------*/
         function Background() {
@@ -249,7 +265,17 @@ $(document)
                 }
                 // curve through the last two points
                 this.canvas.quadraticCurveTo(this.path[i][0], this.path[i][1], this.path[i + 1][0], this.path[i + 1][1]);
-                this.canvas.setLineDash([5, 15]);
+                
+               if (!this.canvas.setLineDash) {
+                    this.canvas.mozDash = [10,15];
+                }else{
+                
+                this.canvas.setLineDash([5,25]);
+                
+                }
+                         
+             
+                
                 this.canvas.lineCap = 'round';
                 this.canvas.stroke();
             }

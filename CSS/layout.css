@@ -7,7 +7,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     
-    background: #333; /* Old browsers */
+    background: #282a2f    ; /* Old browsers */
  overflow-x: hidden;
     overflow-y: scroll;
 
@@ -46,7 +46,7 @@ canvas{
 
 .welcome-container{
     display:inherit;
-    font-family:"Raleway";
+    font-family:"Ubuntu";
     color:#222;
     width:80%;
     
@@ -57,9 +57,14 @@ canvas{
     line-height:150%;
     text-align:justify;
 }
+.welcome-container h1{
+
+    font-family:"Raleway";
+
+}
 .info-container{
     display:inherit;
-    font-family:"Raleway";
+    font-family:"Ubuntu";
     color:#fff;
     width:80%;
     margin:2em auto;
@@ -85,9 +90,9 @@ canvas{
     margin:0em 0 .5em 0;
     font-size:110%;
     font-weight:400;
-    color:white;
+    color:#eee;
     padding-bottom:0.2em;
-
+   font-family:"Raleway";
 
 }
 .info-container>.sub{
@@ -110,7 +115,7 @@ footer{
     color:gray;
     font-size:80%;
     margin:.5em 0 0 0;
-    border-top:1px solid #ddd;
+    border-top:1px solid #41CC0D;
     padding-top:.2em;
 
 
@@ -202,4 +207,28 @@ width:100%;
 }
 }
 
+.info-container h3{
+    margin:0em 0 .5em 0;
+    font-size:100%;
+    padding-top:0.75em;
+    font-weight:200;
+    color:"white";
+    padding-bottom:0.2em;
+   font-family:"Raleway";
+    
+    border-top:1px solid #41CC0D;
 
+}
+.info-container h3 a{
+    display:inline-block;
+    width:auto;
+    font-family:"Ubuntu";
+    font-size:15px;
+    background:#222;
+    border-radius: 3px;
+    padding:.5em;
+    margin:.25em .25em .25em 0;
+    text-decoration:none;
+    color:inherit;
+
+}
